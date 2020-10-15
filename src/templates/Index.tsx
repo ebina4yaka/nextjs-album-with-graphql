@@ -3,14 +3,20 @@ import Hero from '../organisms/Hero'
 import AlbumCardList from '../organisms/AlbumCardList'
 import Footer from '../organisms/Footer'
 import Header from '../organisms/Header'
+import { Post } from '../libs/models'
 
-export default function Index(): React.ReactElement {
+type Props = {
+  posts: Post[]
+}
+
+export default function Index(props: Props): React.ReactElement {
+  const { posts } = props
   return (
     <>
       <Header />
       <main>
         <Hero />
-        <AlbumCardList />
+        <AlbumCardList posts={posts} />
       </main>
       <Footer />
     </>

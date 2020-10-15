@@ -6,6 +6,11 @@ import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
 import makeStyles from '@material-ui/core/styles/makeStyles'
+import { Post } from '../libs/models'
+
+type Props = {
+  post: Post
+}
 
 const useStyles = makeStyles({
   root: {
@@ -21,30 +26,25 @@ const useStyles = makeStyles({
   },
 })
 
-export default function AlbumCard(): React.ReactElement {
+export default function AlbumCard(props: Props): React.ReactElement {
+  const { post } = props
   const classes = useStyles()
   return (
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image="https://source.unsplash.com/random"
-        title="Image title"
+        image={post.url}
+        title={post.title}
       />
       <CardContent className={classes.content}>
         <Typography gutterBottom variant="h5" component="h2">
-          Heading
+          {post.title}
         </Typography>
-        <Typography>
-          This is a media card. You can use this section to describe the
-          content.
-        </Typography>
+        <Typography>posted by @{post.user.name}</Typography>
       </CardContent>
       <CardActions>
         <Button size="small" color="primary">
-          View
-        </Button>
-        <Button size="small" color="primary">
-          Edit
+          LEARN MORE
         </Button>
       </CardActions>
     </Card>

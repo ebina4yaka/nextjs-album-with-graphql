@@ -8,6 +8,5 @@ const getUrl = () => {
 }
 
 export default async function fetcher(query: RequestInfo): Promise<never> {
-  const response = await request<never>(getUrl(), query.toString())
-  return response
+  return request<never>(getUrl(), query.toString())
 }

@@ -33,7 +33,7 @@ export default function AlbumCard(props: Props): React.ReactElement {
     <Card className={classes.root}>
       <CardMedia
         className={classes.media}
-        image={post.url}
+        image={post.imageUrl}
         title={post.title}
       />
       <CardContent className={classes.content}>

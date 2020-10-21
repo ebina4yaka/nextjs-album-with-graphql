@@ -15,8 +15,8 @@ const query = print(gql`
     posts {
       id
       title
-      description
-      url
+      caption
+      imageUrl
       user {
         id
         name

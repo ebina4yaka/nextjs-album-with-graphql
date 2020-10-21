@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import { useMediaQuery } from '@material-ui/core'
 import 'typeface-roboto'
+import { blue, pink } from '@material-ui/core/colors'
 
 export default function MyApp(props: AppProps): React.ReactElement {
   const { Component, pageProps } = props
@@ -16,6 +17,8 @@ export default function MyApp(props: AppProps): React.ReactElement {
       createMuiTheme({
         palette: {
           type: prefersDarkMode ? 'dark' : 'light',
+          primary: blue,
+          secondary: pink,
         },
       }),
     [prefersDarkMode]
